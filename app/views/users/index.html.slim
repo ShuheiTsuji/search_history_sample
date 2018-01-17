@@ -1,0 +1,42 @@
+.container
+  .col-md-8
+    p ユーザ検索画面
+.wrapper
+  .container
+    .panel.panel-default
+      .panel-body
+        = form_tag users_path, method: :get do
+          .form-group.col-md-3
+            = label :id, 'ID'
+            = text_field_tag :id, '', class: 'form-control'
+          .form-group.col-md-3
+            = label :name, '名前'
+            = text_field_tag :name, '', class: 'form-control'
+          .form-group.col-md-4
+            = label :address, '郵便番号'
+            = text_field_tag :address, '', class: 'form-control'
+          .form-group.col-md-2
+            = label :sex, '性別'
+            = select_tag :sex, options_for_select([['男', 0],['女', 1]]), class: 'form-control'
+          .form-group
+            = submit_tag '検索', class: 'btn btn-primary'
+
+        table.table-hover
+          colgroup
+            col width=('200px')
+            col width=('200px')
+            col width=('200px')
+            col width=('200px')
+          thead
+            th ID
+            th 名前
+            th 郵便番号
+          tbody
+            - @users.each do |user|
+              tr
+                td
+                  = user.id
+                td
+                  = user.name
+                td
+                  = user.zip
