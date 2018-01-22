@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/alpaca-tc/active_model_attributes.git
+  revision: 0911ef6bac6fbbaf7bd4989daad9fa4b39878cc1
+  branch: master
+  specs:
+    active_model_attributes (0.0.1)
+      activemodel (>= 4.2.0, < 5.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -176,6 +184,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_attributes!
   bootstrap-sass
   byebug
   coffee-rails (~> 4.2)

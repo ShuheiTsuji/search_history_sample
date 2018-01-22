@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'slim-rails'
 # Bootstrap
 gem 'bootstrap-sass'
+# active_model 5.1にもattributesを導入する
+gem 'active_model_attributes', git: 'https://github.com/alpaca-tc/active_model_attributes.git', branch: 'master'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
