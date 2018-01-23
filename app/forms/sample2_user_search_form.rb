@@ -10,20 +10,18 @@ class Sample2UserSearchForm
   validates :id, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 100 }, allow_blank: true
   validates :name, length: { maximum: 100 }
 
-  def initialize(params)
-    @id   = params[:id]
-    @name = params[:name]
-    @zip  = params[:zip]
-    @sex  = params[:sex]
-    @users = User.all
-  end
-
   def search
-    @users.where!(id: id) if id.present?
-    @users.where!('name like ?', "%#{name}%") if name.present?
-    @users.where!(zip: zip) if zip.present?
-    @users.where!(sex: sex) if sex.present?
-    @users
+    users = User.all
+
+    users.where!(id: id) if id.present?
+
+    users.where!('name like ?', "%#{name}%") if name.present?
+
+    users.where!(zip: zip) if zip.present?
+
+    users.where!(sex: sex) if sex.present?
+
+    users
   end
 
   private
