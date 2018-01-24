@@ -1,0 +1,18 @@
+ja:
+  activemodel:
+    attributes:
+      sample2_user_search_form:
+        id: ID
+        name: 名前
+        zip: 郵便番号
+        sex: 性別
+      sample3_user_search_form:
+        id: ID
+        name: 名前
+        zip: 郵便番号
+        sex: 性別
+      sample4_user_search_form:
+        id: ID
+        name: 名前
+        zip: 郵便番号
+        sex: 性別

@@ -1,0 +1,7 @@
+- if flash.now[:notice]
+  - notice = flash.now[:notice].is_a?(Array) ? safe_join(flash.now[:notice], '<br />'.html_safe) : flash.now[:notice]
+  = notice
+
+- if flash.now[:alert]
+  - alert = flash.now[:alert].is_a?(Array) ? safe_join(flash.now[:alert], '<br />'.html_safe) : flash.now[:alert]
+  = alert
