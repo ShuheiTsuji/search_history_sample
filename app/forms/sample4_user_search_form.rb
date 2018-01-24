@@ -7,7 +7,7 @@ class Sample4UserSearchForm
   attribute :zip, :zip
   attribute :sex, :integer
 
-  validates :id, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 100 }, allow_blank: true
+  validates :id, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 100_000_000 }, allow_blank: true
   validates :name, length: { maximum: 100 }
 
   def search
