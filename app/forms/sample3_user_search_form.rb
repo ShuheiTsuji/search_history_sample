@@ -7,7 +7,7 @@ class Sample3UserSearchForm
   attribute :zip, :zip
   attribute :sex, :integer
 
-  validates :id, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 100 }, allow_blank: true
+  validates :id, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 100_000_000 }, allow_blank: true
   validates :name, length: { maximum: 100 }
 
   def search
@@ -20,10 +20,10 @@ class Sample3UserSearchForm
 
   def params_for_search
     {
-        id: id,
-        name: name,
-        zip: zip,
-        sex: sex
+      id: id,
+      name: name,
+      zip: zip,
+      sex: sex
     }
   end
 end
