@@ -16,3 +16,17 @@ ja:
         name: 名前
         zip: 郵便番号
         sex: 性別
+    errors:
+      models:
+        sample2_user_search_form:
+          attributes:
+            zip:
+              wrong_length: 文字数が7文字ではありません
+        sample3_user_search_form:
+          attributes:
+            zip:
+              wrong_length: 文字数が7文字ではありません
+        sample4_user_search_form:
+          attributes:
+            zip:
+              wrong_length: 文字数が7文字ではありません
