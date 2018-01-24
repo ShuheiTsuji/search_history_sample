@@ -20,10 +20,10 @@ class Sample3UserSearchForm
 
   def params_for_search
     {
-        id: id,
-        name: name,
-        zip: zip,
-        sex: sex
+      id: id,
+      name: name,
+      zip: zip,
+      sex: sex
     }
   end
 end
