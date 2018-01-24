@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  enum sex: { 'man': 0, 'woman': 1 }
+  enum sex: %i( man woman )
 
   scope :search, Users::SearchQuery
 end
