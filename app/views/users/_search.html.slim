@@ -5,21 +5,22 @@
   .container
     .panel.panel-default
       .panel-body
-        = form_tag sample1_users_path, method: :get do
+        = form_for user, url: sample_users_path, method: :get do |f|
           .form-group.col-md-3
-            = label_tag :id, 'ID'
-            = text_field_tag :id, '', class: 'form-control'
+            = f.label :id
+            = f.text_field :id, class: 'form-control'
           .form-group.col-md-3
-            = label_tag :name, '名前'
-            = text_field_tag :name, '', class: 'form-control'
+            = f.label :name
+            = f.text_field :name, class: 'form-control'
           .form-group.col-md-4
-            = label_tag :zip, '郵便番号'
-            = text_field_tag :zip, '', class: 'form-control'
+            = f.label :zip
+            = f.text_field :zip, class: 'form-control'
           .form-group.col-md-2
-            = label_tag :sex, '性別'
-            = select_tag :sex, options_for_select([['男', 0],['女', 1]]), class: 'form-control'
+            = f.label :sex
+            - collection = User.sexes.keys.map { |value| [User.human_attribute_name("#sex.#{value}"), value] }
+            = f.select :sex, collection, class: 'form-control'
           .form-group
-            = submit_tag '検索', class: 'btn btn-primary'
+            = f.submit '検索', class: 'btn btn-primary'
 
         table.table-hover
           colgroup
