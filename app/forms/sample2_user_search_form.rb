@@ -13,14 +13,12 @@ class Sample2UserSearchForm
   def search
     users = User.all
 
+    return users unless valid?
+
     users.where!(id: id) if id.present?
-
     users.where!('name like ?', "%#{name}%") if name.present?
-
     users.where!(zip: zip) if zip.present?
-
     users.where!(sex: sex) if sex.present?
-
     users
   end
 
