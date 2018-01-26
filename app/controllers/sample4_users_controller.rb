@@ -13,10 +13,10 @@ class Sample4UsersController < ApplicationController
 
   def user_search_form_params
     params.fetch(:sample4_user_search_form, {}).permit(
-        :id,
-        :name,
-        :zip,
-        :sex
+      :id,
+      :name,
+      :zip,
+      :sex
     )
   end
 end
