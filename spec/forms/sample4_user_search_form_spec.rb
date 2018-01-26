@@ -22,4 +22,17 @@ RSpec.describe Sample4UserSearchForm, type: :model do
       it { is_expected.to eq false }
     end
   end
+
+  describe '#search' do
+    subject { form.search }
+
+    before do
+      allow(User).to receive(:search)
+    end
+
+    it 'call search' do
+      expect { subject }.not_to raise_error
+      expect(User).to have_received(:search).once
+    end
+  end
 end
